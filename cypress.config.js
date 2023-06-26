@@ -3,8 +3,8 @@ const { defineConfig } = require("cypress");
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const addCucumberPreprocessorPlugin  = require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
 const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
-const getCompareSnapshotsPlugin = require('cypress-image-diff-js/dist/plugin');
-const allureWriter = require('@shelex/cypress-allure-plugin/writer');
+//const getCompareSnapshotsPlugin = require('cypress-image-diff-js/dist/plugin');
+//const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 
 module.exports = defineConfig({
@@ -16,8 +16,8 @@ module.exports = defineConfig({
 
       on("file:preprocessor", bundler)
       await addCucumberPreprocessorPlugin(on, config)
-      getCompareSnapshotsPlugin(on, config);
-      allureWriter(on, config);
+      //getCompareSnapshotsPlugin(on, config);
+      //allureWriter(on, config);
 
       on('before:browser:launch', (browser, launchOptions) => {
         if (browser.name === 'chrome' && browser.isHeadless) {
@@ -36,7 +36,7 @@ module.exports = defineConfig({
     },
     
     specPattern: "./cypress/e2e/test/*.feature",
-    baseUrl: "https://rozetka.com.ua/",
+    baseUrl: "https://www.infobox.info/",
     video: false
   },
 });
