@@ -1,11 +1,15 @@
 {
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@shelex/cypress-allure-plugin": "^2.40.0",
     "cypress": "^12.14.0",
     "esbuild": "^0.18.4"
   },
   "scripts": {
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run -b chrome --headed --env allure=true allureLogGherkin=true",
+    "allure:gen": "allure generate",
+    "allure:run": "allure open"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^18.0.1"
